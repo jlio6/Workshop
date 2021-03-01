@@ -12,7 +12,7 @@
   height: 100%;
 }
 
-#welcome-body {
+/* #welcome-body {
   padding-bottom: 100.8%;
   padding-top: 10%;
   background-image: url('assets/img/stock-welcome.jpg');
@@ -20,6 +20,16 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 0;
+
+} */
+
+#welcome-body {
+  padding-bottom: 10%;
+  padding-top: 10%;
+  background-image: url('assets/img/stock-welcome.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
 
 }
 
