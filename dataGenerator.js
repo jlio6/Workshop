@@ -7,10 +7,10 @@
 window.streams = {};
 streams.home = [];
 streams.users = {};
-streams.users.franklin = [];
-streams.users.goose = [];
-streams.users.beaver = [];
-streams.users.bear = [];
+streams.users.residential = [];
+streams.users.retrofit = [];
+streams.users.renovation = [];
+streams.users.campuswork = [];
 window.users = Object.keys(streams.users);
 
 // utility function for adding tweets to our data structures
@@ -28,11 +28,11 @@ var randomElement = function(array, ceiling) {
 };
 
 // random tweet generator
-var opening = ['just', '', '', '', '', 'ask me how i', 'completely', 'nearly', 'productively', 'efficiently', 'last night i', 'the president', 'that wizard', 'a ninja', 'a seedy old man'];
-var verbs = ['downloaded', 'interfaced', 'deployed', 'developed', 'built', 'invented', 'experienced', 'navigated', 'aided', 'enjoyed', 'engineered', 'installed', 'debugged', 'delegated', 'automated', 'formulated', 'systematized', 'overhauled', 'computed'];
+var opening = ['How do I','How large do I', 'How do you', 'How large do I have to', 'Looking for tips on how to', 'Looking for someone to help', 'Need an efficient way to'];
+var verbs = ['interface', 'develop', 'build', 'invent', 'navigate', 'aid', 'make', 'engineer', 'automate', 'formulate', 'systematize', 'overhaul', 'compute'];
 var objects = ['my', 'your', 'the', 'a', 'my', 'an entire', 'this', 'that', 'the', 'the big', 'a new form of'];
-var nouns = ['cat', 'koolaid', 'system', 'city', 'worm', 'cloud', 'potato', 'money', 'way of life', 'belief system', 'security system', 'bad decision', 'future', 'life', 'pony', 'mind'];
-var tags = ['#techlife', '#burningman', '#sf', 'but only i know how', 'for real', '#sxsw', '#ballin', '#omg', '#yolo', '#magic', '', '', '', ''];
+var nouns = ['fence', 'building', 'column', 'beam', 'footing', 'balcony', 'anchor', 'equipment', 'rooftop', 'wall', 'soil', 'retaining wall', 'window', 'door', 'railing'];
+var tags = ['#residential', '#retrofit', '#homemakeover', '#repairs', '#newconstruction', '#earthquakes', '#seismicengineering', '#architecture', '#anchorage', '#hospitals', '#education', '#soilengineering', '', ''];
 
 var randomMessage = function() {
   return [randomElement(opening), randomElement(verbs), randomElement(objects), randomElement(nouns), randomElement(tags)].join(' ');
@@ -45,6 +45,8 @@ var generateRandomTweet = function() {
   tweet.message = randomMessage();
   tweet.created_at = new Date();
   tweet.profilePhotoURL = './assets/img/' + tweet.user + '.png';
+  tweet.needStamp = Math.floor(Math.random() * 3) === 0;
+  tweet.needDetail = Math.floor(Math.random() * 3) === 0;
   addTweet(tweet);
 };
 
