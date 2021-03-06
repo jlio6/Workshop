@@ -13,13 +13,13 @@ $(document).ready(function(){
 
   var $descriptSection = $('<div class="description-body d-flex flex-wrap justify-content-center bg-dark"></div>');
   var $stampSection = $('<div id="description-stamp" class="p-2 descript"></div>');
-  var $stampPic = $('<img id="stamp-pic" alt="stamp of approval" src="assets/icons/stamp.png">');
+  var $stampPic = $('<img alt="stamp of approval" src="assets/icons/stamp.png">');
   var $stampPara = $('<p id="stamp-para" class="text-light">Get your drawings stamped faster than ever with an extra set of eyes so you can build with confidence.</p>');
   var $forumSection = $('<div id="description-forum" class="p-2 descript"></div>');
   var $forumPic = $('<img id="forum-pic" alt="forum discussion" src="assets/icons/chat.png">');
   var $forumPara = $('<p id="forum-para" class="text-light">Ask the community for feedback from your latest bedroom addition to your rooftop AC unit installation.</p>');
   var $detailSection = $('<div id="description-details" class="p-2 descript"></div>');
-  var $detailPic = $('<img id="detail-pic" alt="blueprint drawings" src="assets/icons/blueprint.png">');
+  var $detailPic = $('<img alt="blueprint drawings" src="assets/icons/blueprint.png">');
   var $detailPara = $('<p id="detail-para" class="text-light">Let our engineers refine your drawings directly through our user interface.</p>');
   var $descriptLearnMore = $('<button type="button" class="btn btn-warning" id="descript-learn-more">Learn More</button>');
 
