@@ -20,6 +20,28 @@ body, #app {
   background-color: rgb(119, 119, 119);
 }
 
+/* OWNER V ENGINEER COVER  */
+
+.bg-div {
+  margin: 0;
+}
+
+.welcome-bg-pic {
+  flex: 1 1 1200px;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  height: 400px;
+}
+
+#arch-pic {
+  background-image: url('assets/img/architect.png');
+}
+
+#eng-pic {
+  background-image: url('assets/img/cranes.png');
+}
+
 /* WELCOME */
 
 #welcome-body {
@@ -55,8 +77,8 @@ h1 {
   margin-bottom: 30px;
 }
 
-button.sign-up {
-  margin-right: 25px;
+.sign-up {
+  margin: 7.5px;
   border-radius: 15px;
   padding: 15px;
 }
