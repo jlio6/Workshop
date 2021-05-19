@@ -1,7 +1,5 @@
-import styled from 'styled-components';
 
-export const StyledBrand = styled.
-.navbar-brand {
+/* .navbar-brand {
   font-size: x-large;
   font-family: 'Pacifico', cursive;
 }
@@ -9,9 +7,7 @@ export const StyledBrand = styled.
 .navbar-nav > li {
   margin-left: 0px;
   padding: 10px 20px;
-}
-
-
+} */
 
 body, #app {
   width: 100%;
@@ -25,11 +21,11 @@ body, #app {
 
 /* OWNER V ENGINEER COVER  */
 
-.bg-div {
+/* .bg-div {
   margin: 0;
-}
+} */
 
-.welcome-bg-pic {
+/* .welcome-bg-pic {
   flex: 1 1 1200px;
   display: grid;
   place-items: center;
@@ -43,11 +39,11 @@ body, #app {
 
 #eng-pic {
   background-image: url('assets/img/cranes.png');
-}
+} */
 
 /* WELCOME */
 
-#welcome-body {
+/* #welcome-body {
   padding-bottom: 10%;
   padding-top: 10%;
   background-image: url('assets/img/stock-welcome.jpg');
@@ -55,19 +51,22 @@ body, #app {
   background-repeat: no-repeat;
   width: 100%;
 
-}
+} */
 
+/*
 .welcome-section {
   width: 40%;
   margin-left: 90px;
   padding: 60px 50px;
+
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   /* background-color: black; */
 }
+*/
 
-h4 {
+/* h4 {
   color: white;
 }
 
@@ -78,13 +77,13 @@ h1 {
 
 .welcome-message {
   margin-bottom: 30px;
-}
+} */
 
-.sign-up {
+/* .sign-up {
   margin: 7.5px;
   border-radius: 15px;
   padding: 15px;
-}
+} */
 
 /* DESCRIPTION */
 
@@ -92,26 +91,24 @@ h1 {
   /* background-color: black; */
 }
 
-.descript {
+/* .descript {
   margin: 75px 30px;
-  /* max-width: 28%; */
   flex: 0 1 400px;
+} */
 
-}
-
-.description-body img {
+/* .description-body img {
   width: 125px;
   display: block;
   margin: 20px auto;
-}
+} */
 
-.description-body p {
+/* .description-body p {
   font-size: 1.33em;
   margin: 50px 20px 20px 20px;
   text-align: center;
-}
+} */
 
-#descript-learn-more {
+/* #descript-learn-more {
   margin-bottom: 100px;
   margin-left: 40%;
   margin-right: 40%;
@@ -119,7 +116,7 @@ h1 {
   font-size: 1.5em;
   border-radius: 15px;
   flex: 0 0 90%;
-}
+} */
 
 /* RANDOM DIVIDER */
 
