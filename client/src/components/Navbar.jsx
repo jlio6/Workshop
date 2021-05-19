@@ -2,21 +2,22 @@ import React, { useState, useEffect } from 'react';
 import $ from 'jquery';
 import axios from 'axios';
 import logo from '../../../assets/icons/favicon.png';
+import { StyledBrand, StyledNavbarNav } from '../css/sharedcss.jsx';
 
 const Navbar = () => {
   const [navPage, setNavPage] = useState(0);
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <StyledBrand className="navbar-brand" href="#">
           <img src={logo} alt="workshop brand" width="30" height="33" className="d-inline-block align-top" />
           WorkShop
-        </a>
+        </StyledBrand>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <StyledNavbarNav className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -39,7 +40,7 @@ const Navbar = () => {
 
               </ul>
             </li>
-          </ul>
+          </StyledNavbarNav>
           <form className="d-flex">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-warning" type="submit">Search</button>
