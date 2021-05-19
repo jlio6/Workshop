@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+
 import $ from 'jquery';
 import axios from 'axios';
 
@@ -21,5 +22,7 @@ const App = () => {
     </div>
   );
 };
+
+export default App;
 
 ReactDOM.render(<App />, document.getElementById('app'));

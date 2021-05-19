@@ -15,7 +15,7 @@ export const StyledBrand = styled.a`
 export const StyledNavbarNav = styled.ul`
   & > li {
     margin-left: 0px;
-    padding: 10px 20px;
+    padding: 7px 20px;
   }
 `;
 
@@ -34,10 +34,18 @@ export const StyledWelcomeBody = styled.div`
 `;
 
 export const StyledWelcomeSection = styled.section`
-  width: 40%;
+  max-width: 500px;
   margin-left: 90px;
   padding: 60px 50px;
+
+  @media only screen and (max-width: 978px) {
+    margin:0;
+  }
+}
+
 `;
+
+
 
 export const StyledSignupButton = styled.button`
   margin-right: 15px;
@@ -85,7 +93,11 @@ export const StyledCranePic = styled(StyledWelcomePic)`
 
 export const StyledDescriptDiv = styled.div`
   margin: 75px 30px;
-  flex: 0 1 300px;
+  flex: 0 1 400px;
+
+  @media only screen and (max-width: 978px) {
+    margin: 30px;
+  }
 `;
 
 export const StyledDescriptImg = styled.img`
@@ -95,7 +107,7 @@ export const StyledDescriptImg = styled.img`
 `;
 
 export const StyledDescriptPara = styled.p`
-  font-size: 1.25em;
+  font-size: 1.33em;
   margin: 50px 20px 20px 20px;
   text-align: center;
 `;
