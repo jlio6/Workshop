@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ForumSort from './ForumSort.jsx';
 import ForumAddPost from './ForumAddPost.jsx';
+import Post from './Post.jsx';
 import request from '../lib/getInfo.js';
 import { StyledLoadingIcon } from '../css/sharedcss.jsx';
 
@@ -38,14 +39,17 @@ const Forum = () => {
       <ForumSort />
       <ForumAddPost />
       {loadingIcon}
-      {posts.map((post) => {
+      {posts.map((post) => (
         <Post
-          key={post.question_id}
-          id={post.question_id}
-          question={post.question_body}
-          answers={post.answers}
+          key={post.questionID}
+          id={post.questionID}
+          username={post.username}
+          category={post.category}
+          question={post.question}
+          needStamp={post.needStamp}
+          needDetail={post.needDetail}
         />
-      })}
+      ))}
     </>
   );
 };

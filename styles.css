@@ -9,11 +9,11 @@
   padding: 10px 20px;
 } */
 
-body, #app {
+/* body, #app {
   width: 100%;
   min-height: 100%;
   background-color: rgb(100, 100, 100);
-}
+} */
 
 /* .nav-link:hover {
   background-color: rgb(119, 119, 119);
@@ -207,7 +207,7 @@ h1 {
 
 /* FORUM POSTS */
 
-.tweet {
+/* .tweet {
   display: grid;
   grid-template-columns: repeat(8, 12.5% [col-start]);
   grid-template-rows: [rline1] 50px [rline2] minmax(40px, auto) [rline3] 40px [rline4];
@@ -218,84 +218,84 @@ h1 {
   color: rgb(211, 211, 211);
   font-size: 0.9em;
   place-items: center;
-}
+} */
 
-.message {
+/* .message {
   grid-column: 1/8;
   grid-row: 1;
   color: white;
   font-weight: bold;
   font-size: 1.2em;
   justify-self: start;
-}
+} */
 
-.details {
+/* .details {
   grid-column: 1/8;
   grid-row: rline2;
   /* color: white; */
   /* font-weight: bold; */
   /* font-size: 1em; */
-}
+/* } */
 
-hr {
+/*hr {
   border: none;
   border-bottom: 2px solid #575757;
   /* clear: both; */
-  grid-row: rline3;
+  /* grid-row: rline3;
   align-self: start;
   grid-column: 1 / 8;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 0;
-}
+} */
 
 .comment-div {
   /* font-family: Arial, Helvetica, sans-serif */
   /* font-size */
-  grid-column: 1;
+  /* grid-column: 1;
   grid-row: rline3;
   align-self: center;
-  justify-self: start;
+  justify-self: start; */
 }
 
 i.fa-comment {
   /* grid-column: 1;
   grid-row: rline3; */
-  font-size: 15px;
+  /* font-size: 15px;
   padding-right: 0;
   margin-top: 2px;
-  margin-right: 0;
+  margin-right: 0; */
 }
 
 .username {
-  grid-column: 6 / 8;
+  /* grid-column: 6 / 8;
   grid-row: rline3;
   justify-self: end;
   align-self: center;
-  color: blue;
+  color: blue; */
 }
 
-.icon-wrapper {
+/* .icon-wrapper { */
   /* display: grid; */
-  grid-column: 8;
+  /* grid-column: 8; */
   /* justify-self: center; */
   /* place-items: center; */
-}
+/* } */
 
-#stamp-wrapper {
+/* #stamp-wrapper {
   grid-row: rline1;
 }
 
 #detail-wrapper {
   grid-row: rline2;
-}
+} */
 
-.forum-pic {
+/* .forum-pic {
   position: relative;
   width: 40px;
   top: 40px;
   left: 30px;
-}
+} */
 
 .hidden {
   visibility: hidden;

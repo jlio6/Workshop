@@ -217,3 +217,89 @@ export const StyledLoadingIcon = styled.i`
   margin-top: 40px;
   margin-left: 37%;
 `;
+
+export const StyledPostDiv = styled(StyledAddPost)`
+  display: grid;
+  grid-template-columns: repeat(8, 12.5% [col-start]);
+  grid-template-rows: [rline1] 50px [rline2] minmax(40px, auto) [rline3] 40px [rline4];
+  padding: 20px 20px 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: rgb(211, 211, 211);
+  font-size: 0.9em;
+  place-items: center;
+`;
+
+export const StyledPostSummary = styled.a`
+  grid-column: 1/8;
+  grid-row: 1;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  justify-self: start;
+`;
+
+export const StyledQuestionBody = styled.p`
+  grid-column: 1/8;
+  grid-row: rline2;
+`;
+
+export const StyledDivider = styled.hr`
+  border: none;
+  border-bottom: 2px solid #575757;
+  grid-row: rline3;
+  align-self: start;
+  grid-column: 1 / 8;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0;
+`;
+
+export const StyledCommentDiv = styled.div`
+  grid-column: 1;
+  grid-row: rline3;
+  align-self: center;
+  justify-self: start;
+`;
+
+export const StyledCommentIcon = styled.i`
+  font-size: 15px;
+  padding-right: 0;
+  margin-top: 2px;
+  margin-right: 0;
+`;
+
+export const StyledUsername = styled.span`
+  grid-column: 6 / 8;
+  grid-row: rline3;
+  justify-self: end;
+  align-self: center;
+  color: blue;
+`;
+
+export const StyledUserPicSmall = styled(StyledUserPic)`
+  width: 15px;
+  border-radius: 50%;
+  margin-right: 15px;
+`;
+
+export const StyledStampWrapper = styled.div`
+  grid-row: rline1;
+`;
+
+export const StyledDetailWrapper = styled.div`
+  grid-row: rline2;
+`;
+
+export const StyledClientIcons = styled.img`
+  position: relative;
+  width: 40px;
+  top: 40px;
+  left: 30px;
+`;
+
+export const StyledIconLabel = styled.p`
+  visibility: hidden;
+  position: relative;
+`;
