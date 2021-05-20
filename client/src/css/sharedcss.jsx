@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import stockWelcomeImg from '../../../assets/img/stock-welcome.jpg';
 import stockArchImg from '../../../assets/img/architect.png';
 import stockCranesImg from '../../../assets/img/cranes.png';
@@ -18,6 +19,13 @@ export const StyledNavbarNav = styled.ul`
     padding: 7px 20px;
   }
 `;
+
+export const StyledNavLink = styled(Link)`
+  &:hover {
+    background-color: rgb(119, 119, 119);
+  }
+`;
+
 
 /////////////////////////////////////////
 // STYLES FOR WELCOME SECTION //
@@ -127,4 +135,85 @@ export const StyledFooter = styled.img`
   width: 90%;
   margin: 0 auto;
   border-radius: 20px;
+`;
+
+/////////////////////////////////////////
+// STYLES FOR FORUMS SORTING/NEW POST //
+/////////////////////////////////////////
+
+export const StyledForumSort = styled.div`
+  width: 50%;
+  min-height: 60px;
+  margin-top: 70px;
+  margin-left: 15%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid orange;
+`;
+
+export const StyledFilterButton = styled.div`
+  margin: 15px;
+  border-radius: 20px;
+  padding: 6px 15px;
+  &: first-child {
+    margin-left: 20px;
+  }
+`;
+
+export const StyledSortIcon = styled.i`
+  margin-right: 8px;
+`;
+
+export const StyledSortIconEllipsis = styled.i`
+  border-radius: 50%;
+  padding: 0;
+`;
+
+export const StyledAddPost = styled.form`
+  width: 50%;
+  min-height: 100px;
+  margin-top: 0;
+  margin-left: 15%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /* background-color: rgb(41, 41, 41); */
+  padding: 25px;
+`;
+
+export const StyledUserPic = styled.img`
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+`;
+
+export const StyledSortDropdown = styled.button`
+  border-radius: 20px 0 0 20px;
+  width: 200px;
+`;
+
+export const StyledNewPostButton = styled.button`
+  color: rgb(134, 134, 134);
+  width: 45%;
+  text-align: left;
+  border-radius: 0;
+  &:hover {
+    background-color: rgb(224, 224, 224);
+    border-color: rgb(223, 223, 223);
+  }
+`;
+
+export const StyledPostSubmit = styled.button`
+  border-radius: 0 20px 20px 0;
+  &:hover {
+    box-shadow: 0 0 10px rgb(121, 101, 79);
+  }
+`;
+
+/////////////////////////////////////////
+// STYLES FOR FORUMS THREADS //
+/////////////////////////////////////////
+
+export const StyledLoadingIcon = styled.i`
+  margin-top: 40px;
+  margin-left: 37%;
 `;

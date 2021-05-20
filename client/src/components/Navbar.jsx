@@ -7,11 +7,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import {LinkContainer} from 'react-router-bootstrap'
 
-import Forums from './Forum.jsx';
-import App from '../index.jsx';
+
+import Forum from './Forum.jsx';
+import SignUpHome from './SignUpHome.jsx';
 import logo from '../../../assets/icons/favicon.png';
-import { StyledBrand, StyledNavbarNav } from '../css/sharedcss.jsx';
+import { StyledBrand, StyledNavbarNav, StyledNavLink } from '../css/sharedcss.jsx';
 
 const Navbar = () => {
   const [navPage, setNavPage] = useState(0);
@@ -29,10 +31,10 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <StyledNavbarNav className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                <StyledNavLink to="/" className="nav-link active" aria-current="page">Home</StyledNavLink>
               </li>
               <li className="nav-item">
-                <a as={Link} to="/engineeringforums" className="nav-link">Forum</a>
+                <StyledNavLink to="engineeringforums" className="nav-link">Forum</StyledNavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#" tabIndex="-1" aria-disabled="true">Events</a>
@@ -51,14 +53,7 @@ const Navbar = () => {
                 </ul>
               </li>
             </StyledNavbarNav>
-            <Switch>
-              <Route exact path="/home">
-                <App />
-              </Route>
-              <Route path="/engineeringforums">
-                <Forums />
-              </Route>
-            </Switch>
+
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-warning" type="submit">Search</button>
@@ -66,6 +61,14 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      <Switch>
+        <Route exact path="/">
+          <SignUpHome />
+        </Route>
+        <Route path="/engineeringforums">
+          <Forum />
+        </Route>
+      </Switch>
     </Router>
   );
 };

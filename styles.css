@@ -12,12 +12,12 @@
 body, #app {
   width: 100%;
   min-height: 100%;
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(100, 100, 100);
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
   background-color: rgb(119, 119, 119);
-}
+} */
 
 /* OWNER V ENGINEER COVER  */
 
@@ -120,16 +120,16 @@ h1 {
 
 /* RANDOM DIVIDER */
 
-#random-image {
+/* #random-image {
   display: block;
   width: 90%;
   margin: 0 auto;
   border-radius: 20px;
-}
+} */
 
 /* FORUM */
 
-.filter-forum {
+/* .filter-forum {
   width: 50%;
   min-height: 80px;
   margin-top: 80px;
@@ -137,9 +137,9 @@ h1 {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom: 1px solid orange;
-}
+} */
 
-.filter-button:first-child {
+/* .filter-button:first-child {
   margin-left: 20px;
 }
 
@@ -147,64 +147,63 @@ h1 {
   margin: 20px 15px;
   border-radius: 20px;
   padding: 8px 15px;
-}
+} */
 
-.fas {
+/* .fas {
   margin-right: 8px;
-}
+} */
 
-button.ellipsis {
+/* button.ellipsis {
   border-radius: 50%;
   padding: 8px 12px;
 }
 
 #ellipsis {
   margin-right: 0;
-}
+} */
 
 /* NEW POST  */
 
-.new-post {
+/* .new-post {
   width: 50%;
   min-height: 100px;
   margin-top: 0;
   margin-left: 15%;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  /* background-color: rgb(41, 41, 41); */
   padding: 25px;
-}
+} */
 
-img.user {
+/* img.user {
   width: 50px;
   border-radius: 50%;
   margin-right: 15px;
-}
+} */
 
-#dropdownMenuButton {
+/* #dropdownMenuButton {
   border-radius: 20px 0 0 20px;
   width: 200px;
-}
+} */
 
-#new-post {
+/* #new-post {
   color: rgb(134, 134, 134);
   width: 45%;
   text-align: left;
   border-radius: 0;
-}
+} */
 
-#new-post:hover {
+/* #new-post:hover {
   background-color: rgb(224, 224, 224);
   border-color: rgb(223, 223, 223);
-}
+} */
 
-#new-post-submit {
+/* #new-post-submit {
   border-radius: 0 20px 20px 0;
 }
 
 #new-post-submit:hover {
   box-shadow: 0 0 10px rgb(121, 101, 79);
-}
+} */
 
 /* FORUM POSTS */
 

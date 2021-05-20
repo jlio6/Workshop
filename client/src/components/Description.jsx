@@ -16,7 +16,7 @@ const Description = () => {
       <div className="description-body d-flex flex-wrap justify-content-center bg-dark">
         <StyledDescriptDiv id="description-forum" className="p-2">
           <StyledDescriptImg id="forum-pic" alt="forum discussion" src={forumLogo} />
-          <StyledDescriptPara id="forum-para" className="text-light">Ask the community for feedback from your latest bedroom addition to your rooftop AC unit installation.</StyledDescriptPara>
+          <StyledDescriptPara id="forum-para" className="text-light">Ask the community for feedback on anything from your latest bedroom addition to your rooftop AC unit installation.</StyledDescriptPara>
         </StyledDescriptDiv>
         <StyledDescriptDiv id="description-details" className="p-2">
           <StyledDescriptImg alt="blueprint drawings" src={blueprintLogo} />
