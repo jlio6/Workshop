@@ -18,7 +18,7 @@ import { StyledBrand, StyledNavbarNav, StyledNavLink } from '../css/sharedcss.js
 const Navbar = () => {
   const [navPage, setNavPage] = useState(0);
   return (
-    <Router>
+    <>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark">
         <div className="container-fluid">
           <StyledBrand className="navbar-brand" href="#">
@@ -31,7 +31,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <StyledNavbarNav className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <StyledNavLink to="/" className="nav-link active" aria-current="page">Home</StyledNavLink>
+                <StyledNavLink exact={true} to="/" className="nav-link" aria-current="page">Home</StyledNavLink>
               </li>
               <li className="nav-item">
                 <StyledNavLink to="engineeringforums" className="nav-link">Forum</StyledNavLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <Forum />
         </Route>
       </Switch>
-    </Router>
+    </>
   );
 };
 

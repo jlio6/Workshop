@@ -18,10 +18,9 @@ const Forum = () => {
       .then((list) => {
         console.log('list data is ', list.data);
         const unsortedPosts = list.data;
-        // const sortedQ = unsortedQ.sort((a, b) => b.question_helpfulness - a.question_helpfulness);
-        // setQuestions(sortedQ);
         setPosts(unsortedPosts.slice(0, questionsPerPress));
-        setTimeout(() => setLoading(false), 1000);
+        // setTimeout(() => setLoading(false), 1000);
+        setLoading(false);
       })
       .catch((err) => {
         throw err;

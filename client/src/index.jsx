@@ -31,7 +31,9 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Navbar />
+      <Router>
+        <Navbar />
+      </Router>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import stockWelcomeImg from '../../../assets/img/stock-welcome.jpg';
 import stockArchImg from '../../../assets/img/architect.png';
 import stockCranesImg from '../../../assets/img/cranes.png';
@@ -20,7 +20,7 @@ export const StyledNavbarNav = styled.ul`
   }
 `;
 
-export const StyledNavLink = styled(Link)`
+export const StyledNavLink = styled(NavLink)`
   &:hover {
     background-color: rgb(119, 119, 119);
   }
@@ -114,20 +114,26 @@ export const StyledDescriptImg = styled.img`
   margin: 20px auto;
 `;
 
-export const StyledDescriptPara = styled.p`
+export const StyledSubtitle = styled.p`
   font-size: 1.33em;
-  margin: 50px 20px 20px 20px;
   text-align: center;
 `;
 
-export const StyledLearnMoreButton = styled.button`
+export const StyledDescriptPara = styled.p`
+  font-size: 1.1em;
+  color: rgb(209, 209, 209);
+  margin: 20px;
+  text-align: center;
+`;
+
+export const StyledLearnMoreButton = styled(Link)`
   margin-bottom: 100px;
   margin-left: 40%;
   margin-right: 40%;
-  padding: 15px;
+  padding: 10px;
   font-size: 1.5em;
-  border-radius: 15px;
-  flex: 0 0 90%;
+  border-radius: 10px;
+  flex: 0 0 20%;
 `;
 
 export const StyledFooter = styled.img`
@@ -222,7 +228,7 @@ export const StyledPostDiv = styled(StyledAddPost)`
   display: grid;
   grid-template-columns: repeat(8, 12.5% [col-start]);
   grid-template-rows: [rline1] 50px [rline2] minmax(40px, auto) [rline3] 40px [rline4];
-  padding: 20px 20px 10px 20px;
+  padding: 20px 30px 10px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -231,8 +237,15 @@ export const StyledPostDiv = styled(StyledAddPost)`
   place-items: center;
 `;
 
+export const StyledUpvote = styled.i`
+  // font-size: 15px;
+  // padding-right: 0;
+  // margin-top: 2px;
+  // margin-right: 0;
+`;
+
 export const StyledPostSummary = styled.a`
-  grid-column: 1/8;
+  grid-column: 2/8;
   grid-row: 1;
   color: white;
   font-weight: bold;
@@ -241,7 +254,7 @@ export const StyledPostSummary = styled.a`
 `;
 
 export const StyledQuestionBody = styled.p`
-  grid-column: 1/8;
+  grid-column: 2/8;
   grid-row: rline2;
 `;
 
@@ -286,15 +299,17 @@ export const StyledUserPicSmall = styled(StyledUserPic)`
 
 export const StyledStampWrapper = styled.div`
   grid-row: rline1;
+  grid-column: 8;
 `;
 
 export const StyledDetailWrapper = styled.div`
   grid-row: rline2;
+  grid-column: 8;
 `;
 
 export const StyledClientIcons = styled.img`
   position: relative;
-  width: 40px;
+  width: 30px;
   top: 40px;
   left: 30px;
 `;
@@ -302,4 +317,110 @@ export const StyledClientIcons = styled.img`
 export const StyledIconLabel = styled.p`
   visibility: hidden;
   position: relative;
+`;
+
+/////////////////////////////////////////
+// STYLES FOR FORUMS MODAL //
+/////////////////////////////////////////
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  & > div {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(50, 50, 50);
+    border-radius: 5px;
+    padding: 2em;
+    opacity: 1;
+  }
+`;
+
+export const StyledModalTitle = styled.input`
+  display: block;
+  margin-top: 10px;
+  background-color: rgb(70, 70, 70);
+  border-radius: 3px;
+  padding-left: 5px;
+  border: none;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const StyledModalPost = styled(StyledModalTitle)`
+  height: 8rem;
+`;
+
+export const StyledCategoriesDiv = styled.div`
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const StyledModalCategories = styled.input`
+  color: white;
+  background-color: rgb(70, 70, 70);
+  &:hover {
+    background-color: rgb(110, 110, 110);
+  }
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  padding: 15px 24px;
+  z-index: 1;
+  position: relative;
+  flex: 1;
+  text-align: center;
+  border-color: gray;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledStampOrDetail = styled.input`
+  margin-top: 8px;
+  margin-right: 8px;
+  z-index: 1;
+  position: relative;
+  border: 1px solid gray;
+  color: gray;
+  fill: gray;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  &:focus {
+    outline: none;
+    background-color: #f0ad4e;
+  }
+`;
+
+export const StyledSubmitPost = styled.input`
+  margin-top: 8px;
+  margin-right: 8px;
+  z-index: 1;
+  float: right;
+  // position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
 `;
