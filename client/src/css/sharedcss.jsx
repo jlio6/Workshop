@@ -56,8 +56,8 @@ export const StyledWelcomeSection = styled.section`
 
 
 export const StyledSignupButton = styled.button`
-  margin-right: 15px;
-  border-radius: 15px;
+  margin-right: 25px;
+  border-radius: 5px;
   padding: 10px;
 `;
 
@@ -132,7 +132,7 @@ export const StyledLearnMoreButton = styled(Link)`
   margin-right: 40%;
   padding: 10px;
   font-size: 1.5em;
-  border-radius: 10px;
+  border-radius: 5px;
   flex: 0 0 20%;
 `;
 
@@ -352,6 +352,8 @@ export const StyledModalTitle = styled.input`
   padding-left: 5px;
   border: none;
   width: 100%;
+  font-weight: 100;
+  color: rgb(235,235,235);
   &:focus {
     outline: none;
   }
@@ -393,7 +395,7 @@ export const StyledModalCategories = styled.input`
   align-items: center;
 `;
 
-export const StyledStampOrDetail = styled.input`
+export const StyledStampOrDetail = styled.button`
   margin-top: 8px;
   margin-right: 8px;
   z-index: 1;

@@ -40,8 +40,17 @@ const AddPost = ({ showModal, onOpenModalClick }) => {
           </StyledCategoriesDiv>
           <StyledModalTitle placeholder="Title"></StyledModalTitle>
           <StyledModalPost as="textarea" placeholder="Message"></StyledModalPost>
-          <StyledStampOrDetail className="btn btn-outline" type="button" name="stamp" value="+Stamp" />
-          <StyledStampOrDetail className="btn btn-outline" type="button" name="detail" value="+Detail" />
+          {/* <StyledStampOrDetail type="button" className="btn btn-outline">
+            <label>
+              <input type="checkbox" name="stamp" value="+Stamp" /><span>+Stamp</span>
+            </label>
+          </StyledStampOrDetail> */}
+          <div type="button" className="btn btn-outline">
+            <label>
+              <StyledStampOrDetail type="checkbox" name="stamp" value="+Stamp" /><span>+Stamp</span>
+            </label>
+          </div>
+          <StyledStampOrDetail className="btn btn-outline" type="checkbox" name="detail" value="+Detail" /><span>+Detail</span>
           <StyledSubmitPost type="button" className="btn btn-warning" onClick={onModalSubmit} name="addPost" value="Add Post" />
           <StyledSubmitPost type="button" className="btn btn-outline-warning" onClick={onOpenModalClick} name="cancel" value="Cancel" />
         </form>
