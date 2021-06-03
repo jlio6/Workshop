@@ -395,23 +395,50 @@ export const StyledModalCategories = styled.input`
   align-items: center;
 `;
 
-export const StyledStampOrDetail = styled.button`
-  margin-top: 8px;
-  margin-right: 8px;
-  z-index: 1;
-  position: relative;
-  border: 1px solid gray;
-  color: gray;
-  fill: gray;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  line-height: 24px;
-  text-transform: uppercase;
-  &:focus {
-    outline: none;
-    background-color: #f0ad4e;
+export const StyledStampOrDetail = styled.div`
+  margin:4px;
+  background-color:#EFEFEF;
+  border-radius:4px;
+  border:1px solid #D0D0D0;
+  overflow:auto;
+  float:left;
+  &:hover {
+    background:red;
   }
+  & label {
+    float:left;
+    width:4.0em;
+  }
+  & label span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+  }
+  & label input {
+    position: absolute;
+    visibility: hidden;
+  }
+  & input:checked + span {
+    background-color:#911;
+    color:#fff;
+  }
+
+// margin-top: 8px;
+  // margin-right: 8px;
+  // z-index: 1;
+  // position: relative;
+  // border: 1px solid gray;
+  // color: gray;
+  // fill: gray;
+  // font-size: 12px;
+  // font-weight: 700;
+  // letter-spacing: .5px;
+  // line-height: 24px;
+  // text-transform: uppercase;
+  // &:focus {
+  //   outline: none;
+  //   background-color: #f0ad4e;
+  // }
 `;
 
 export const StyledSubmitPost = styled.input`
