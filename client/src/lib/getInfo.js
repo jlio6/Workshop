@@ -7,36 +7,23 @@ const request = {
     return axios('/thread');
   },
 
+  postRequest: (formData) => {
+    console.log('ay foo');
+    return axios.post('/thread', formData);
+  },
+
   getProductInfo: (productID) => getRequest(`products/${productID}`, 'GET'),
 
   putRequest: (questionID, helpfulOrReport) => getRequest(`qa/questions/${questionID}/${helpfulOrReport}/`, 'PUT'),
 
-  postQuestionRequest: (productID, formInfo) => {
+  postQuestionRequest: (formInfo) => {
     const form = {
-      body: formInfo[0].value,
-      name: formInfo[1].value,
-      email: formInfo[2].value,
-      product_id: productID,
+      title: formInfo[0].value,
+      message: formInfo[1].value,
+      needStamp: formInfo[2].value,
+      needDetail: formInfo[3].value,
     };
-    return postRequest('qa/questions/', form);
-  },
-
-  postAnswerRequest: (questionID, formInfo) => {
-    const form = {
-      body: formInfo[0].value,
-      name: formInfo[1].value,
-      email: formInfo[2].value,
-    };
-    return postRequest(`qa/questions/${questionID}/answers`, form);
-  },
-
-  postInteractionRequest: (elementClicked, widgetClicked, timeStamp) => {
-    const form = {
-      element: elementClicked,
-      widget: widgetClicked,
-      time: timeStamp,
-    };
-    return postRequest('interactions', form);
+    return postRequest(form);
   },
 
 };

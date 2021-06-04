@@ -21,14 +21,14 @@ import { Modal, StyledCategoriesDiv, StyledModalCategories, StyledModalTitle, St
 
 const AddPostCopy = ({ showModal, setShowModal, onOpenModalClick }) => {
 
-  function handleSubmit(e) {
+  function onModalSubmit(e) {
     e.preventDefault();
     console.log('You clicked submit.');
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Submit</button>
+    <form>
+      <input type="submit" onClick={onModalSubmit} />
     </form>
   );
 };
