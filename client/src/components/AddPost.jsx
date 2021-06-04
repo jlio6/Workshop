@@ -19,15 +19,12 @@ const StyledModal = styled(Modal)`
   }}
 `;
 
-const AddPost = ({ showModal, onOpenModalClick }) => {
+const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
 
   const onModalSubmit = (event) => {
+    alert('A form was submitted');
     event.preventDefault();
   };
-
-  const onRandom = () => {
-    console.log('wtf');
-  }
 
   return (
     <StyledModal showModal={showModal}>
@@ -45,10 +42,15 @@ const AddPost = ({ showModal, onOpenModalClick }) => {
               <input type="checkbox" name="stamp" value="+Stamp" /><span>+STAMP</span>
             </label>
           </StyledStampOrDetail>
-          <StyledStampOrDetail className="btn btn-outline" type="checkbox" name="detail" value="+Detail" /><span>+Detail</span>
-          <StyledSubmitPost type="button" className="btn btn-warning" onClick={onModalSubmit} name="addPost" value="Add Post" />
-          <StyledSubmitPost type="button" className="btn btn-outline-warning" onClick={onOpenModalClick} name="cancel" value="Cancel" />
+          <StyledStampOrDetail>
+            <label>
+              <input type="checkbox" name="detail" value="+Detail" /><span>+DETAIL</span>
+            </label>
+          </StyledStampOrDetail>
+          <StyledSubmitPost type="submit" className="btn btn-warning" name="addPost" value="Add Post" />
+          <input type="submit" value="Submit" />
         </form>
+        <StyledSubmitPost as="button" type="button" className="btn btn-outline-warning" onClick={() => setShowModal(false)}>Cancel</StyledSubmitPost>
       </div>
     </StyledModal>
 

@@ -396,22 +396,29 @@ export const StyledModalCategories = styled.input`
 `;
 
 export const StyledStampOrDetail = styled.div`
-  margin:4px;
-  background-color:#EFEFEF;
-  border-radius:4px;
-  border:1px solid #D0D0D0;
+  margin-top: 8px;
+  margin-right: 8px;
+  background-color: transparent;
+  color: #ffbb33;
+  border-radius: 0.25rem;
+  border:1px solid #ffbb33;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
   overflow:auto;
   float:left;
   &:hover {
-    background:red;
+    background:#ffbb33;
+    color: black;
+    cursor: pointer;
   }
   & label {
     float:left;
-    width:4.0em;
   }
   & label span {
     text-align:center;
-    padding:3px 0px;
+    padding: .375rem .75rem;
     display:block;
   }
   & label input {
@@ -419,26 +426,9 @@ export const StyledStampOrDetail = styled.div`
     visibility: hidden;
   }
   & input:checked + span {
-    background-color:#911;
-    color:#fff;
+    background-color: #ffbb33;
+    color: black;
   }
-
-// margin-top: 8px;
-  // margin-right: 8px;
-  // z-index: 1;
-  // position: relative;
-  // border: 1px solid gray;
-  // color: gray;
-  // fill: gray;
-  // font-size: 12px;
-  // font-weight: 700;
-  // letter-spacing: .5px;
-  // line-height: 24px;
-  // text-transform: uppercase;
-  // &:focus {
-  //   outline: none;
-  //   background-color: #f0ad4e;
-  // }
 `;
 
 export const StyledSubmitPost = styled.input`
@@ -453,3 +443,16 @@ export const StyledSubmitPost = styled.input`
   line-height: 24px;
   text-transform: uppercase;
 `;
+
+// export const StyledCancelPost = styled(StyledSubmitPost)`
+//   margin-top: 8px;
+//   margin-right: 8px;
+//   z-index: 1;
+//   float: right;
+//   // position: relative;
+//   font-size: 12px;
+//   font-weight: 700;
+//   letter-spacing: .5px;
+//   line-height: 24px;
+//   text-transform: uppercase;
+// `;

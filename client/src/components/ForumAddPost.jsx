@@ -11,7 +11,7 @@ const ForumAddPost = () => {
   const [showModal, setShowModal] = useState(false);
 
   const onOpenModalClick = () => {
-    setShowModal(!showModal);
+    console.log('hey man');
   }
 
   return (
@@ -25,11 +25,12 @@ const ForumAddPost = () => {
         <a className="dropdown-item" href="#">ws/residential</a>
         <a className="dropdown-item" href="#">ws/renovation</a>
       </div>
-      <StyledNewPostButton onClick={onOpenModalClick} type="button" className="btn btn-light">Ask a question...</StyledNewPostButton>
+      <StyledNewPostButton onClick={() => setShowModal(true)} type="button" className="btn btn-light">Ask a question...</StyledNewPostButton>
       <StyledPostSubmit className="btn btn-warning" type="button">New Post</StyledPostSubmit>
       <AddPost
         onOpenModalClick={onOpenModalClick}
         showModal={showModal}
+        setShowModal={setShowModal}
       />
     </StyledAddPost>
   );
