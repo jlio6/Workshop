@@ -50,23 +50,11 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
   };
 
   const onTitleChange = (event) => {
-    console.log(event);
     setTitle(event.target.value);
   }
 
   const onMessageChange = (event) => {
-    console.log(event);
     setMessage(event.target.value);
-  }
-
-  const onNeedStampChange = (event) => {
-    console.log(event);
-    setNeedStamp(event.target.checked);
-  }
-
-  const onNeedDetailChange = (event) => {
-    console.log(event);
-    // setNeedDetail(event);
   }
 
   return (
@@ -87,7 +75,7 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
           </StyledStampOrDetail>
           <StyledStampOrDetail>
             <label>
-              <input type="checkbox"  id="needDetailCheck" name="detail" value="+Detail" onChange={onNeedDetailChange} /><span>+DETAIL</span>
+              <input type="checkbox"  id="needDetailCheck" name="detail" value="+Detail" /><span>+DETAIL</span>
             </label>
           </StyledStampOrDetail>
         </form>

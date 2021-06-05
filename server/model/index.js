@@ -8,7 +8,7 @@ module.exports = {
   },
 
   post: (args, callback) => {
-    db.queryAsync('INSERT INTO Questions () VALUES ()')
+    db.queryAsync('INSERT INTO Questions (username, category, question, needStamp, needDetail) VALUES (?,?,?,?,?)', ['humbugger', ...args])
       .then((data) => callback(null, data[0]))
       .catch((err) => callback(err));
   },
