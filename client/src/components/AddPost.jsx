@@ -29,9 +29,18 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
   const onModalSubmit = (event) => {
     event.preventDefault();
 
-    const parsedForm = $('#addPost').serializeArray();
-    console.log('hey parsedform is ', parsedForm);
-    request.postQuestionRequest(parsedForm)
+    if ($("#needStampCheck")[0].checked) {
+      setNeedStamp(true);
+    } else {
+      setNeedStamp(false);
+    }
+    if ($("#needDetailCheck")[0].checked) {
+      setNeedDetail(true);
+    } else {
+      setNeedDetail(false);
+    }
+
+    request.postQuestionRequest(title, message, needStamp, needDetail)
       .then(() => {
         console.log('post success');
       })
@@ -41,7 +50,23 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
   };
 
   const onTitleChange = (event) => {
+    console.log(event);
     setTitle(event.target.value);
+  }
+
+  const onMessageChange = (event) => {
+    console.log(event);
+    setMessage(event.target.value);
+  }
+
+  const onNeedStampChange = (event) => {
+    console.log(event);
+    setNeedStamp(event.target.checked);
+  }
+
+  const onNeedDetailChange = (event) => {
+    console.log(event);
+    // setNeedDetail(event);
   }
 
   return (
@@ -54,15 +79,15 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
             <StyledModalCategories type="button" name="link" value="Link" />
           </StyledCategoriesDiv>
           <StyledModalTitle onChange={onTitleChange} placeholder="Title"></StyledModalTitle>
-          <StyledModalPost as="textarea" placeholder="Message"></StyledModalPost>
+          <StyledModalPost as="textarea" onChange={onMessageChange} placeholder="Message"></StyledModalPost>
           <StyledStampOrDetail>
             <label>
-              <input type="checkbox" name="stamp" value="+Stamp" /><span>+STAMP</span>
+              <input type="checkbox" id="needStampCheck" name="stamp" value="+Stamp" /><span>+STAMP</span>
             </label>
           </StyledStampOrDetail>
           <StyledStampOrDetail>
             <label>
-              <input type="checkbox" name="detail" value="+Detail" /><span>+DETAIL</span>
+              <input type="checkbox"  id="needDetailCheck" name="detail" value="+Detail" onChange={onNeedDetailChange} /><span>+DETAIL</span>
             </label>
           </StyledStampOrDetail>
         </form>

@@ -7,6 +7,12 @@ module.exports = {
       .catch((err) => callback(err));
   },
 
+  post: (args, callback) => {
+    db.queryAsync('INSERT INTO Questions () VALUES ()')
+      .then((data) => callback(null, data[0]))
+      .catch((err) => callback(err));
+  },
+
   getStyle: (args, callback) => {
     db.queryAsync('SELECT styleID, name, originalPrice, salePrice FROM Styles WHERE productID=?', args)
       .then((data) => callback(null, data[0][0]))

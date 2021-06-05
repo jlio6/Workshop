@@ -349,10 +349,11 @@ export const StyledModalTitle = styled.input`
   margin-top: 10px;
   background-color: rgb(70, 70, 70);
   border-radius: 3px;
-  padding-left: 5px;
+  padding: 6px;
   border: none;
   width: 100%;
-  font-weight: 100;
+  font-weight: 600;
+  font-size: 0.9rem;
   color: rgb(235,235,235);
   &:focus {
     outline: none;
@@ -361,6 +362,7 @@ export const StyledModalTitle = styled.input`
 
 export const StyledModalPost = styled(StyledModalTitle)`
   height: 8rem;
+  font-weight: 100;
 `;
 
 export const StyledCategoriesDiv = styled.div`
@@ -409,7 +411,7 @@ export const StyledStampOrDetail = styled.div`
   overflow:auto;
   float:left;
   &:hover {
-    background:#ffbb33;
+    background: rgb(255,200,81);
     color: black;
     cursor: pointer;
   }
