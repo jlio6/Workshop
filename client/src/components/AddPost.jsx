@@ -20,7 +20,7 @@ const StyledModal = styled(Modal)`
   }}
 `;
 
-const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
+const AddPost = ({ showModal, setShowModal, onOpenModalClick, setLoading }) => {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
   const [needStamp, setNeedStamp] = useState(false);
@@ -43,6 +43,8 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick }) => {
     request.postQuestionRequest(title, message, needStamp, needDetail)
       .then(() => {
         console.log('post success');
+        setShowModal(false);
+        setLoading(true);
       })
       .catch((err) => {
         console.log(err);

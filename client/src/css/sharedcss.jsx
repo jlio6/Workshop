@@ -256,6 +256,8 @@ export const StyledPostSummary = styled.a`
 export const StyledQuestionBody = styled.p`
   grid-column: 2/8;
   grid-row: rline2;
+  align-self: start;
+  justify-self: start;
 `;
 
 export const StyledDivider = styled.hr`
@@ -446,15 +448,3 @@ export const StyledSubmitPost = styled.input`
   text-transform: uppercase;
 `;
 
-// export const StyledCancelPost = styled(StyledSubmitPost)`
-//   margin-top: 8px;
-//   margin-right: 8px;
-//   z-index: 1;
-//   float: right;
-//   // position: relative;
-//   font-size: 12px;
-//   font-weight: 700;
-//   letter-spacing: .5px;
-//   line-height: 24px;
-//   text-transform: uppercase;
-// `;

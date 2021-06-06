@@ -2,7 +2,7 @@ const db = require('../db');
 
 module.exports = {
   get: (callback) => {
-    db.queryAsync('SELECT * FROM Questions')
+    db.queryAsync('SELECT * FROM Questions ORDER BY questionID DESC')
       .then((data) => callback(null, data[0]))
       .catch((err) => callback(err));
   },

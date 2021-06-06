@@ -18,7 +18,7 @@ module.exports = {
       if (err) {
         console.log(err);
       }
-      console.log('get success!');
+      console.log('get success! here\'s data ', data);
       res.send(data);
     })
   },

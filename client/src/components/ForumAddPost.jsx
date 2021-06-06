@@ -6,7 +6,7 @@ import AddPost from './AddPost.jsx';
 import { StyledAddPost, StyledUserPic, StyledSortDropdown, StyledNewPostButton, StyledPostSubmit } from '../css/sharedcss.jsx';
 import userPic from '../../../assets/img/jlio.jpg'
 
-const ForumAddPost = () => {
+const ForumAddPost = (setLoading) => {
   const [userLogin, setUserLogin] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
@@ -31,6 +31,7 @@ const ForumAddPost = () => {
         onOpenModalClick={onOpenModalClick}
         showModal={showModal}
         setShowModal={setShowModal}
+        setLoading={setLoading}
       />
     </StyledAddPost>
   );
