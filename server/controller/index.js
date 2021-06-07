@@ -2,14 +2,14 @@ const model = require('../model/index.js');
 
 module.exports = {
   post: (req, res) => {
-    const args = req.body;
+    const args = Object.values(req.body);
     model.post(args, (err, data) => {
       if (err) {
         console.log(err);
       }
-      console.log('post success!');
+      console.log('data is ', data);
       res.send();
-    })
+    });
   },
 
   get: (req, res) => {
@@ -18,7 +18,7 @@ module.exports = {
       if (err) {
         console.log(err);
       }
-      console.log('get success!');
+      console.log('get success! here\'s data ', data);
       res.send(data);
     })
   },

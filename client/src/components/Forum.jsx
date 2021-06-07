@@ -36,7 +36,7 @@ const Forum = () => {
   return (
     <>
       <ForumSort />
-      <ForumAddPost />
+      <ForumAddPost setLoading={setLoading} />
       {loadingIcon}
       {posts.map((post) => (
         <Post

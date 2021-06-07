@@ -3,6 +3,7 @@ import $ from 'jquery';
 import axios from 'axios';
 import styled from 'styled-components';
 
+import request from '../lib/getInfo.js';
 import { Modal, StyledCategoriesDiv, StyledModalCategories, StyledModalTitle, StyledModalPost, StyledStampOrDetail, StyledSubmitPost } from '../css/sharedcss.jsx';
 
 const StyledModal = styled(Modal)`
@@ -19,32 +20,69 @@ const StyledModal = styled(Modal)`
   }}
 `;
 
-const AddPost = ({ showModal, onOpenModalClick }) => {
+const AddPost = ({ showModal, setShowModal, onOpenModalClick, setLoading }) => {
+  const [title, setTitle] = useState('');
+  const [message, setMessage] = useState('');
+  const [needStamp, setNeedStamp] = useState(false);
+  const [needDetail, setNeedDetail] = useState(false);
 
   const onModalSubmit = (event) => {
     event.preventDefault();
+
+    if ($("#needStampCheck")[0].checked) {
+      setNeedStamp(true);
+    } else {
+      setNeedStamp(false);
+    }
+    if ($("#needDetailCheck")[0].checked) {
+      setNeedDetail(true);
+    } else {
+      setNeedDetail(false);
+    }
+
+    request.postQuestionRequest(title, message, needStamp, needDetail)
+      .then(() => {
+        console.log('post success');
+        setShowModal(false);
+        setLoading(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   };
 
-  const onRandom = () => {
-    console.log('wtf');
+  const onTitleChange = (event) => {
+    setTitle(event.target.value);
+  }
+
+  const onMessageChange = (event) => {
+    setMessage(event.target.value);
   }
 
   return (
     <StyledModal showModal={showModal}>
       <div>
-        <form onSubmit={onModalSubmit}>
+        <form id="addPost">
           <StyledCategoriesDiv>
             <StyledModalCategories type="button" name="post" value="Post" />
             <StyledModalCategories type="button" name="images" value="Images" />
             <StyledModalCategories type="button" name="link" value="Link" />
           </StyledCategoriesDiv>
-          <StyledModalTitle placeholder="Title"></StyledModalTitle>
-          <StyledModalPost as="textarea" placeholder="Message"></StyledModalPost>
-          <StyledStampOrDetail className="btn btn-outline" type="button" name="stamp" value="+Stamp" />
-          <StyledStampOrDetail className="btn btn-outline" type="button" name="detail" value="+Detail" />
-          <StyledSubmitPost type="button" className="btn btn-warning" onClick={onModalSubmit} name="addPost" value="Add Post" />
-          <StyledSubmitPost type="button" className="btn btn-outline-warning" onClick={onOpenModalClick} name="cancel" value="Cancel" />
+          <StyledModalTitle onChange={onTitleChange} placeholder="Title"></StyledModalTitle>
+          <StyledModalPost as="textarea" onChange={onMessageChange} placeholder="Message"></StyledModalPost>
+          <StyledStampOrDetail>
+            <label>
+              <input type="checkbox" id="needStampCheck" name="stamp" value="+Stamp" /><span>+STAMP</span>
+            </label>
+          </StyledStampOrDetail>
+          <StyledStampOrDetail>
+            <label>
+              <input type="checkbox"  id="needDetailCheck" name="detail" value="+Detail" /><span>+DETAIL</span>
+            </label>
+          </StyledStampOrDetail>
         </form>
+        <StyledSubmitPost as="button" className="btn btn-warning" name="addPost" onClick={onModalSubmit}>Add Post </StyledSubmitPost>
+        <StyledSubmitPost as="button" type="button" className="btn btn-outline-warning" onClick={() => setShowModal(false)}>Cancel</StyledSubmitPost>
       </div>
     </StyledModal>
 

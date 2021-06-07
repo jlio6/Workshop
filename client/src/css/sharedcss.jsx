@@ -56,8 +56,8 @@ export const StyledWelcomeSection = styled.section`
 
 
 export const StyledSignupButton = styled.button`
-  margin-right: 15px;
-  border-radius: 15px;
+  margin-right: 25px;
+  border-radius: 5px;
   padding: 10px;
 `;
 
@@ -132,7 +132,7 @@ export const StyledLearnMoreButton = styled(Link)`
   margin-right: 40%;
   padding: 10px;
   font-size: 1.5em;
-  border-radius: 10px;
+  border-radius: 5px;
   flex: 0 0 20%;
 `;
 
@@ -256,6 +256,8 @@ export const StyledPostSummary = styled.a`
 export const StyledQuestionBody = styled.p`
   grid-column: 2/8;
   grid-row: rline2;
+  align-self: start;
+  justify-self: start;
 `;
 
 export const StyledDivider = styled.hr`
@@ -349,9 +351,12 @@ export const StyledModalTitle = styled.input`
   margin-top: 10px;
   background-color: rgb(70, 70, 70);
   border-radius: 3px;
-  padding-left: 5px;
+  padding: 6px;
   border: none;
   width: 100%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgb(235,235,235);
   &:focus {
     outline: none;
   }
@@ -359,6 +364,7 @@ export const StyledModalTitle = styled.input`
 
 export const StyledModalPost = styled(StyledModalTitle)`
   height: 8rem;
+  font-weight: 100;
 `;
 
 export const StyledCategoriesDiv = styled.div`
@@ -393,22 +399,39 @@ export const StyledModalCategories = styled.input`
   align-items: center;
 `;
 
-export const StyledStampOrDetail = styled.input`
+export const StyledStampOrDetail = styled.div`
   margin-top: 8px;
   margin-right: 8px;
-  z-index: 1;
-  position: relative;
-  border: 1px solid gray;
-  color: gray;
-  fill: gray;
+  background-color: transparent;
+  color: #ffbb33;
+  border-radius: 0.25rem;
+  border:1px solid #ffbb33;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .5px;
   line-height: 24px;
-  text-transform: uppercase;
-  &:focus {
-    outline: none;
-    background-color: #f0ad4e;
+  overflow:auto;
+  float:left;
+  &:hover {
+    background: rgb(255,200,81);
+    color: black;
+    cursor: pointer;
+  }
+  & label {
+    float:left;
+  }
+  & label span {
+    text-align:center;
+    padding: .375rem .75rem;
+    display:block;
+  }
+  & label input {
+    position: absolute;
+    visibility: hidden;
+  }
+  & input:checked + span {
+    background-color: #ffbb33;
+    color: black;
   }
 `;
 
@@ -424,3 +447,4 @@ export const StyledSubmitPost = styled.input`
   line-height: 24px;
   text-transform: uppercase;
 `;
+

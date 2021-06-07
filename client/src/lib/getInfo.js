@@ -1,6 +1,15 @@
 import $ from 'jquery';
 import axios from 'axios';
 
+const postRequest = (formData) => {
+  console.log('ay foo');
+  return axios('/thread', {
+    method: 'POST',
+    data: formData,
+  });
+  return axios.post('/thread', formData);
+}
+
 const request = {
 
   getProductRequest: (productID) => {
@@ -11,32 +20,14 @@ const request = {
 
   putRequest: (questionID, helpfulOrReport) => getRequest(`qa/questions/${questionID}/${helpfulOrReport}/`, 'PUT'),
 
-  postQuestionRequest: (productID, formInfo) => {
+  postQuestionRequest: (title, message, needStamp, needDetail) => {
     const form = {
-      body: formInfo[0].value,
-      name: formInfo[1].value,
-      email: formInfo[2].value,
-      product_id: productID,
+      title,
+      message,
+      needStamp,
+      needDetail,
     };
-    return postRequest('qa/questions/', form);
-  },
-
-  postAnswerRequest: (questionID, formInfo) => {
-    const form = {
-      body: formInfo[0].value,
-      name: formInfo[1].value,
-      email: formInfo[2].value,
-    };
-    return postRequest(`qa/questions/${questionID}/answers`, form);
-  },
-
-  postInteractionRequest: (elementClicked, widgetClicked, timeStamp) => {
-    const form = {
-      element: elementClicked,
-      widget: widgetClicked,
-      time: timeStamp,
-    };
-    return postRequest('interactions', form);
+    return postRequest(form);
   },
 
 };
