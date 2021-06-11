@@ -4,10 +4,11 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 
-import { StyledPostDiv, StyledUpvote, StyledPostSummary, StyledQuestionBody, StyledDivider, StyledCommentDiv, StyledCommentIcon, StyledUserPicSmall, StyledUsername, StyledStampWrapper, StyledDetailWrapper, StyledClientIcons, StyledIconLabel } from '../css/sharedcss.jsx';
+import { StyledPostDiv, StyledVotingDiv, StyledUpvote, StyledVoteCount, StyledDownvote, StyledPostSummary, StyledQuestionBody, StyledDivider, StyledCommentDiv, StyledCommentIcon, StyledUserPicSmall, StyledUsername, StyledStampWrapper, StyledDetailWrapper, StyledClientIcons, StyledIconLabel } from '../css/sharedcss.jsx';
 import stampPic from '../../../assets/icons/stamp.png';
 import blueprintPic from '../../../assets/icons/blueprint.png';
-import userPic from '../../../assets/img/jlio.jpg'
+import userPic from '../../../assets/img/jlio.jpg';
+import upVoteIcon from '../../../assets/icons/upvote.png';
 
 const StyledStampIcon = styled(StyledClientIcons)`
   filter: ${props => !props.needStamp ? "grayscale(1) opacity(0.35)" : "grayscale(0)"}
@@ -21,7 +22,11 @@ const Post = ({ username, category, question, needStamp, needDetail }) => {
   return (
     <StyledPostDiv className="container new-post bg-dark">
       {/* <StyledUserPicSmall className="profile-photo" alt="profile pic" src={userPic}/> */}
-      <StyledUpvote className="fas fa-arrow-up"></StyledUpvote>
+      <StyledVotingDiv>
+        <StyledUpvote src={upVoteIcon} alt="upvote"></StyledUpvote>
+        <StyledVoteCount>0</StyledVoteCount>
+        <StyledDownvote src={upVoteIcon} alt="upvote"></StyledDownvote>
+      </StyledVotingDiv>
       <StyledPostSummary href="#">{category}</StyledPostSummary>
       <StyledQuestionBody>{question}</StyledQuestionBody>
       <StyledDivider />
