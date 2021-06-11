@@ -237,11 +237,31 @@ export const StyledPostDiv = styled(StyledAddPost)`
   place-items: center;
 `;
 
-export const StyledUpvote = styled.i`
-  // font-size: 15px;
-  // padding-right: 0;
-  // margin-top: 2px;
-  // margin-right: 0;
+export const StyledVotingDiv = styled.div`
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const StyledUpvote = styled.img`
+  color: rgb(211, 211, 211);
+  font-size: 15px;
+  height: 3.5rem;
+  padding-right: 30px;
+  margin-top: 2px;
+  margin-right: 0;
+`;
+
+export const StyledVoteCount = styled.p`
+  font-size: 1.5rem;
+  padding: 10px;
+  margin: 0;
+`;
+
+export const StyledDownvote = styled(StyledUpvote)`
+  transform: rotateX(180deg);
 `;
 
 export const StyledPostSummary = styled.a`
