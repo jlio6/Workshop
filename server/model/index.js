@@ -2,13 +2,13 @@ const db = require('../db');
 
 module.exports = {
   get: (callback) => {
-    db.queryAsync('SELECT * FROM Questions ORDER BY questionID DESC')
+    db.queryAsync('SELECT * FROM Questions INNER JOIN Users ON Questions.userID = Users.userID ORDER BY questionID DESC')
       .then((data) => callback(null, data[0]))
       .catch((err) => callback(err));
   },
 
   post: (args, callback) => {
-    db.queryAsync('INSERT INTO Questions (username, category, question, needStamp, needDetail) VALUES (?,?,?,?,?)', ['humbugger', ...args])
+    db.queryAsync('INSERT INTO Questions (userID, title, question, needStamp, needDetail, community) VALUES (?,?,?,?,?,?)', [1, ...args])
       .then((data) => callback(null, data[0]))
       .catch((err) => callback(err));
   },

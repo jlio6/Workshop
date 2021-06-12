@@ -43,7 +43,7 @@ const Forum = () => {
           key={post.questionID}
           id={post.questionID}
           username={post.username}
-          category={post.category}
+          title={post.title}
           question={post.question}
           needStamp={post.needStamp}
           needDetail={post.needDetail}

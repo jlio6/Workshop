@@ -109,13 +109,15 @@ export const StyledDescriptDiv = styled.div`
 `;
 
 export const StyledDescriptImg = styled.img`
-  width: 125px;
+  width: 100px;
   display: block;
   margin: 20px auto;
 `;
 
 export const StyledSubtitle = styled.p`
-  font-size: 1.33em;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 30px;
   text-align: center;
 `;
 

@@ -25,6 +25,7 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick, setLoading }) => {
   const [message, setMessage] = useState('');
   const [needStamp, setNeedStamp] = useState(false);
   const [needDetail, setNeedDetail] = useState(false);
+  const [community, setCommunity] = useState('all');
 
   const onModalSubmit = (event) => {
     event.preventDefault();
@@ -40,7 +41,7 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick, setLoading }) => {
       setNeedDetail(false);
     }
 
-    request.postQuestionRequest(title, message, needStamp, needDetail)
+    request.postQuestionRequest(title, message, needStamp, needDetail, community)
       .then(() => {
         console.log('post success');
         setShowModal(false);
