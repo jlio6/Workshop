@@ -248,7 +248,7 @@ export const StyledVotingDiv = styled.div`
 export const StyledUpvote = styled.img`
   color: rgb(211, 211, 211);
   font-size: 15px;
-  height: 3.5rem;
+  height: 1rem;
   padding-right: 30px;
   margin-top: 2px;
   margin-right: 0;
