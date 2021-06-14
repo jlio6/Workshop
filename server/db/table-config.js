@@ -56,8 +56,5 @@ module.exports = (db) => {
     .then(() => db.queryAsync(`
         SET FOREIGN_KEY_CHECKS=0;
     `))
-    // .then(() => db.queryAsync(`
-    //   ALTER TABLE Features ADD FOREIGN KEY (productID) REFERENCES Products (id);
-    // `))
     .catch((err) => console.log(err));
 };
