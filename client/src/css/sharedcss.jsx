@@ -109,13 +109,15 @@ export const StyledDescriptDiv = styled.div`
 `;
 
 export const StyledDescriptImg = styled.img`
-  width: 125px;
+  width: 100px;
   display: block;
   margin: 20px auto;
 `;
 
 export const StyledSubtitle = styled.p`
-  font-size: 1.33em;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-top: 30px;
   text-align: center;
 `;
 
@@ -248,7 +250,7 @@ export const StyledVotingDiv = styled.div`
 export const StyledUpvote = styled.img`
   color: rgb(211, 211, 211);
   font-size: 15px;
-  height: 3.5rem;
+  height: 1rem;
   padding-right: 30px;
   margin-top: 2px;
   margin-right: 0;

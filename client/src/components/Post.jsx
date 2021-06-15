@@ -18,16 +18,15 @@ const StyledDetailIcon = styled(StyledClientIcons)`
   filter: ${props => !props.needDetail ? "grayscale(1) opacity(0.35)" : "grayscale(0)"}
 `;
 
-const Post = ({ username, category, question, needStamp, needDetail }) => {
+const Post = ({ username, title, question, needStamp, needDetail }) => {
   return (
     <StyledPostDiv className="container new-post bg-dark">
-      {/* <StyledUserPicSmall className="profile-photo" alt="profile pic" src={userPic}/> */}
       <StyledVotingDiv>
         <StyledUpvote src={upVoteIcon} alt="upvote"></StyledUpvote>
         <StyledVoteCount>0</StyledVoteCount>
         <StyledDownvote src={upVoteIcon} alt="upvote"></StyledDownvote>
       </StyledVotingDiv>
-      <StyledPostSummary href="#">{category}</StyledPostSummary>
+      <StyledPostSummary href="#">{title}</StyledPostSummary>
       <StyledQuestionBody>{question}</StyledQuestionBody>
       <StyledDivider />
       <StyledUsername><i className="fas fa-check-circle fa-sm"></i>{`  ${username}`}</StyledUsername>

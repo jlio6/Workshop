@@ -19,7 +19,6 @@ const Forum = () => {
         console.log('list data is ', list.data);
         const unsortedPosts = list.data;
         setPosts(unsortedPosts.slice(0, questionsPerPress));
-        // setTimeout(() => setLoading(false), 1000);
         setLoading(false);
       })
       .catch((err) => {
@@ -43,10 +42,13 @@ const Forum = () => {
           key={post.questionID}
           id={post.questionID}
           username={post.username}
-          category={post.category}
+          title={post.title}
           question={post.question}
           needStamp={post.needStamp}
           needDetail={post.needDetail}
+          voteCount={post.voteCount}
+          peLicensed={post.peLicensed}
+          seLicensed={post.seLicensed}
         />
       ))}
     </>
