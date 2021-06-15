@@ -16,7 +16,7 @@ Workshop Inc. is a hub where users gain access to structural engineers around th
 
 ## Quick Look
 #### Landing Page & Questionnaire
-![til](https://github.com/Health-Mart/healthy-food-inc/blob/main/GIFs/Landing_Page_And_Questionnaire.gif?raw=true)
+![til](https://github.com/jlio6/Workshop/blob/master/assets/gifs/workshop.gif?raw=true)
 
 
 ## Installation
