@@ -25,7 +25,7 @@ const Post = ({ id, username, title, question, needStamp, needDetail, voteCount 
   const [upvoted, setUpvoted] = useState(false);
   const [downvoted, setDownvoted] = useState(false);
 
-  const voteChange = (id, voteIncrement, callback) => {
+  const voteChange = (voteIncrement, callback) => {
     request.putVoteRequest(id, voteIncrement)
           .then(() => {
             setVote(voteIncrement);
@@ -36,40 +36,31 @@ const Post = ({ id, username, title, question, needStamp, needDetail, voteCount 
 
   const onUpvoteClick = () => {
     if (upvoted) {
-      request.putVoteRequest(id, vote - 1)
-        .then(() => {
-          setVote(vote - 1);
-          setUpvoted(false);
-        })
-        .catch((err) => console.log(err));
+      voteChange(vote - 1, () => setUpvoted(false));
     } else {
-      request.putVoteRequest(id, vote + 1)
-        .then(() => {
-          setVote(vote + 1);
+      if (downvoted) {
+        voteChange(vote + 2, () => {
+          setDownvoted(false);
           setUpvoted(true);
-        })
-        .catch((err) => console.log(err));
+        });
+      } else {
+        voteChange(vote + 1, () => setUpvoted(true));
+      }
     }
   }
 
   const onDownvoteClick = () => {
     if (downvoted) {
-      request.putVoteRequest(id, vote + 1)
-        .then(() => {
-          setVote(vote + 1);
-          setDownvoted(false);
-        })
-        .catch((err) => console.log(err));
+      voteChange(vote + 1, () => setDownvoted(false));
     } else {
       if (upvoted) {
-
-      }
-      request.putVoteRequest(id, vote - 1)
-        .then(() => {
-          setVote(vote - 1);
+        voteChange(vote - 2, () => {
+          setUpvoted(false);
           setDownvoted(true);
-        })
-        .catch((err) => console.log(err));
+        });
+      } else {
+        voteChange(vote - 1, () => setDownvoted(true));
+      }
     }
   }
 
