@@ -13,10 +13,16 @@ module.exports = {
       .catch((err) => callback(err));
   },
 
-  getStyle: (args, callback) => {
-    db.queryAsync('SELECT styleID, name, originalPrice, salePrice FROM Styles WHERE productID=?', args)
-      .then((data) => callback(null, data[0][0]))
+  putVote: (args, callback) => {
+    db.queryAsync('UPDATE LOW_PRIORITY Questions SET voteCount=(?) WHERE questionID=(?)', [args[0], args[1]])
+      .then((data) => callback(null, data[0]))
       .catch((err) => callback(err));
   },
 
 };
+
+ // getStyle: (args, callback) => {
+  //   db.queryAsync('SELECT styleID, name, originalPrice, salePrice FROM Styles WHERE productID=?', args)
+  //     .then((data) => callback(null, data[0][0]))
+  //     .catch((err) => callback(err));
+  // },

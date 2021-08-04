@@ -14,9 +14,9 @@ const Forum = () => {
 
   useEffect(() => {
     setLoading(true);
-    request.getProductRequest()
+    request.getPostsRequest()
       .then((list) => {
-        console.log('list data is ', list.data);
+        console.log('list data is no data', list);
         const unsortedPosts = list.data;
         setPosts(unsortedPosts.slice(0, questionsPerPress));
         setLoading(false);

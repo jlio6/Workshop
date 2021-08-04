@@ -11,13 +11,13 @@ const postRequest = (formData) => {
 
 const request = {
 
-  getProductRequest: (productID) => {
+  getPostsRequest: () => {
     return axios('/thread');
   },
 
-  getProductInfo: (productID) => getRequest(`products/${productID}`, 'GET'),
-
-  putRequest: (questionID, helpfulOrReport) => getRequest(`qa/questions/${questionID}/${helpfulOrReport}/`, 'PUT'),
+  putVoteRequest: (postId, voteCount) => {
+    return axios.put(`/thread/${postId}/`, { data: voteCount });
+  },
 
   postQuestionRequest: (title, message, needStamp, needDetail, community) => {
     const form = {

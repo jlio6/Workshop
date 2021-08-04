@@ -18,7 +18,19 @@ module.exports = {
       if (err) {
         console.log(err);
       }
-      console.log('get success! here\'s data ', data);
+      // console.log('get success! here\'s data ', data);
+      res.send(data);
+    })
+  },
+
+  putVote: (req, res) => {
+    const args = [req.body.data, Number(req.params.postId)];
+    console.log('args is now : ', args);
+    model.putVote(args, (err, data) => {
+      if (err) {
+        console.log(err);
+      }
+      console.log('vote success! here\'s data ', data);
       res.send(data);
     })
   },
