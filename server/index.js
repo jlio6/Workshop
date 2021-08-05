@@ -12,6 +12,8 @@ app.post('/thread', controller.post);
 
 app.get('/thread', controller.get);
 
+app.put('/thread/:postId', controller.putVote);
+
 app.get('/*', (req, res) => {
   const pathName = path.join(__dirname, '..', 'client', 'dist', 'index.html');
   res.sendFile(pathName);

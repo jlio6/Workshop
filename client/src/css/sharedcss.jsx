@@ -247,7 +247,7 @@ export const StyledVotingDiv = styled.div`
   justify-content: space-between;
 `;
 
-export const StyledUpvote = styled.img`
+export const StyledVote = styled.img`
   color: rgb(211, 211, 211);
   font-size: 15px;
   height: 1rem;
@@ -260,10 +260,6 @@ export const StyledVoteCount = styled.p`
   font-size: 1.5rem;
   padding: 10px;
   margin: 0;
-`;
-
-export const StyledDownvote = styled(StyledUpvote)`
-  transform: rotateX(180deg);
 `;
 
 export const StyledPostSummary = styled.a`
