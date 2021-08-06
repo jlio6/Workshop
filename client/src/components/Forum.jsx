@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ForumSort from './ForumSort.jsx';
 import ForumAddPost from './ForumAddPost.jsx';
-import Post from './Post.jsx';
+import Post from './Post/Post.jsx';
 import request from '../lib/getInfo.js';
 import { StyledLoadingIcon } from '../css/sharedcss.jsx';
 
