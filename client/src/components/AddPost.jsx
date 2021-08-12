@@ -20,7 +20,7 @@ const StyledModal = styled(Modal)`
   }}
 `;
 
-const AddPost = ({ showModal, setShowModal, onOpenModalClick, setLoading }) => {
+const AddPost = ({ showModal, setShowModal, onOpenModalClick, refreshPosts }) => {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
   const [needStamp, setNeedStamp] = useState(false);
@@ -45,7 +45,7 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick, setLoading }) => {
       .then(() => {
         console.log('post success');
         setShowModal(false);
-        setLoading(true);
+        refreshPosts();
       })
       .catch((err) => {
         console.log(err);
@@ -82,7 +82,7 @@ const AddPost = ({ showModal, setShowModal, onOpenModalClick, setLoading }) => {
             </label>
           </StyledStampOrDetail>
         </form>
-        <StyledSubmitPost as="button" className="btn btn-warning" name="addPost" onClick={onModalSubmit}>Add Post </StyledSubmitPost>
+        <StyledSubmitPost as="button" type="button" className="btn btn-warning" name="addPost" onClick={onModalSubmit}>Add Post </StyledSubmitPost>
         <StyledSubmitPost as="button" type="button" className="btn btn-outline-warning" onClick={() => setShowModal(false)}>Cancel</StyledSubmitPost>
       </div>
     </StyledModal>
