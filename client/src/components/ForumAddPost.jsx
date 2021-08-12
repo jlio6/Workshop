@@ -6,7 +6,7 @@ import AddPost from './AddPost.jsx';
 import { StyledAddPost, StyledUserPic, StyledSortDropdown, StyledNewPostButton, StyledPostSubmit } from '../css/sharedcss.jsx';
 import userPic from '../../../assets/img/jlio.jpg'
 
-const ForumAddPost = (setLoading) => {
+const ForumAddPost = (setLoading, refreshPosts) => {
   const [userLogin, setUserLogin] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
@@ -26,12 +26,13 @@ const ForumAddPost = (setLoading) => {
         <a className="dropdown-item" href="#">ws/renovation</a>
       </div>
       <StyledNewPostButton onClick={() => setShowModal(true)} type="button" className="btn btn-light">Ask a question...</StyledNewPostButton>
-      <StyledPostSubmit className="btn btn-warning" type="button">New Post</StyledPostSubmit>
+      <StyledPostSubmit onClick={() => setShowModal(true)} className="btn btn-warning" type="button">New Post</StyledPostSubmit>
       <AddPost
         onOpenModalClick={onOpenModalClick}
         showModal={showModal}
         setShowModal={setShowModal}
         setLoading={setLoading}
+        refreshPosts={refreshPosts}
       />
     </StyledAddPost>
   );
